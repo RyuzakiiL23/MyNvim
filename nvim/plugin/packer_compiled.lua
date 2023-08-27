@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/ryu23/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
     url = "https://github.com/onsails/lspkind.nvim"
   },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/home/ryu23/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/ryu23/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -196,6 +201,16 @@ _G.packer_plugins = {
     path = "/home/ryu23/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/home/ryu23/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/ryu23/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
   ["typescript.nvim"] = {
     loaded = true,
     path = "/home/ryu23/.local/share/nvim/site/pack/packer/start/typescript.nvim",
@@ -210,6 +225,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ryu23/.local/share/nvim/site/pack/packer/start/vim-maximizer",
     url = "https://github.com/szw/vim-maximizer"
+  },
+  ["vim-nightfly-guicolors"] = {
+    loaded = true,
+    path = "/home/ryu23/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
+    url = "https://github.com/bluz71/vim-nightfly-guicolors"
   },
   ["vim-surround"] = {
     loaded = true,

@@ -31,10 +31,11 @@ return packer.startup(function(use)
   -- packer can manage itself
   use("wbthomason/packer.nvim")
 
-  --lua fuctions that many plugins use
-  use("nvim-lua/plenary.nvim")
+  use({ "catppuccin/nvim", as = "catppuccin" })
 
-  use { "catppuccin/nvim", as = "catppuccin" }
+  use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
+
+  use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -47,14 +48,18 @@ return packer.startup(function(use)
   -- commenting with gc
   use("numToStr/Comment.nvim")
 
-  --file explorer
+  -- file explorer
   use("nvim-tree/nvim-tree.lua")
 
   -- vs-code like icons
   use("nvim-tree/nvim-web-devicons")
 
-   -- statusline
+  -- statusline
   use("nvim-lualine/lualine.nvim")
+
+  -- fuzzy finding w/ telescope
+  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
+  use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
   -- autocompletion
   use("hrsh7th/nvim-cmp") -- completion plugin
@@ -73,13 +78,16 @@ return packer.startup(function(use)
   -- configuring lsp servers
   use("neovim/nvim-lspconfig") -- easily configure language servers
   use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
-
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    requires = {
+      { "nvim-tree/nvim-web-devicons" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
+  }) -- enhanced lsp uis
   use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
-
-  --
-  --HNA KHLIT WA7ED L3IBA BADYA GLEPINR 
-  --
 
   -- formatting & linting
   use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
@@ -101,7 +109,7 @@ return packer.startup(function(use)
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
-if packer_bootstrap then
+  if packer_bootstrap then
     require("packer").sync()
   end
 end)
