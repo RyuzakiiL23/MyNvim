@@ -7,10 +7,6 @@ require("josean.plugins.nvim-tree")
 require("josean.plugins.lualine")
 --require("josean.plugins.telescope")
 
--- undo even though
-
-vim.opt.undofile = true
-
 -- Define the keybinding
 
 vim.api.nvim_set_keymap(
@@ -39,19 +35,5 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>pe", -- Use "pe" for PyCodeStyle
   ':lua require("pycodestyle_checker").check_pep8_errors()<CR>',
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>ge", -- Use "ge" for GCC Errors
-  ':lua require("gcc_checker").check_gcc_errors()<CR>',
-  { noremap = true, silent = true }
-)
-
--- Define key mappings
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>ml", -- Use "ml" for Memory Leaks
-  ':lua require("memory_leak_checker").check_memory_leaks()<CR>',
   { noremap = true, silent = true }
 )
